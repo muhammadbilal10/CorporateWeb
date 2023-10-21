@@ -19,7 +19,7 @@ import { useRouter } from "next/navigation";
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
-function NavBar({ handleLogin }) {
+function NavBar() {
   const login = false;
   const router = useRouter();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -42,6 +42,10 @@ function NavBar({ handleLogin }) {
 
   const handleSignIn = () => {
     router.push("/signin");
+  };
+
+  const handleSignUp = () => {
+    router.push("/signup");
   };
 
   return (
@@ -183,7 +187,9 @@ function NavBar({ handleLogin }) {
               <Button sx={{ color: "white" }} onClick={handleSignIn}>
                 Sign In
               </Button>
-              <Button sx={{ color: "white" }}>Sign up</Button>
+              <Button sx={{ color: "white" }} onClick={handleSignUp}>
+                Sign up
+              </Button>
             </Stack>
           )}
         </Toolbar>
